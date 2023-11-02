@@ -12,8 +12,11 @@ public class TestController {
     @Value("${eureka.instance.instance-id}")
     private String instanceId;
 
+    @Value("${testGithubProperty}")
+    private String testGithubProperty;
+
     @GetMapping("/test")
     public String test() {
-        return instanceId;
+        return instanceId + ":" + testGithubProperty;
     }
 }
